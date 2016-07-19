@@ -141,6 +141,24 @@ withOtherUserState s1 f
              , res
              )
 
+-- | change the type of user state, using the current one
+--   (added by Dmitry K.)
+
+withChangedUserState      :: (s0 -> s1) -> IOStateArrow s1 b c -> IOStateArrow s0 b c
+withChangedUserState fs f
+    = IOSLA $ \ s x ->
+      do
+      (s', res) <- runIOSLA f ( XIOState { xioSysState  = xioSysState s
+                                         , xioUserState = fs (xioUserState  s)
+                                         }
+                              ) x
+      return ( XIOState { xioSysState  = xioSysState  s'
+                        , xioUserState = xioUserState s
+                        }
+             , res
+             )
+
+
 withoutUserState      :: IOSArrow b c -> IOStateArrow s0 b c
 withoutUserState      = withOtherUserState ()
 

@@ -1,8 +1,8 @@
 -- arch-tag: Haskell XML Toolbox main description file
-Name:           hxt
+Name:           hxt-fehu
 Version:        9.3.1.15
-Synopsis:       A collection of tools for processing XML with Haskell.
-Description:    The Haskell XML Toolbox bases on the ideas of HaXml and HXML,
+Synopsis:       Fork. A collection of tools for processing XML with Haskell.
+Description:    Fork. The Haskell XML Toolbox bases on the ideas of HaXml and HXML,
                 but introduces a more general approach for processing XML with Haskell.
                 The Haskell XML Toolbox uses a generic data model for representing XML documents,
                 including the DTD subset and the document subset, in Haskell.
@@ -17,7 +17,7 @@ Description:    The Haskell XML Toolbox bases on the ideas of HaXml and HXML,
                 hxt-unicode contains encoding and decoding functions,
                 hxt-charproperties char properties for unicode and XML.
                 .
-                Changes from 9.3.1.14: For ghc-7.10 network-uri is automatically selected 
+                Changes from 9.3.1.14: For ghc-7.10 network-uri is automatically selected
                 .
                 Changes from 9.3.1.13: ghc-7.10 compatibility
                 .
@@ -59,7 +59,7 @@ Description:    The Haskell XML Toolbox bases on the ideas of HaXml and HXML,
                 Changes from 9.2.0: New warnings from ghc-7.4 removed
 License:        MIT
 License-file:   LICENSE
-Author:         Uwe Schmidt, Martin Schmidt, Torben Kuseler
+Author:         Uwe Schmidt, Martin Schmidt, Torben Kuseler, Dmitry K. (forked)
 Maintainer:     Uwe Schmidt <uwe@fh-wedel.de>
 Stability:      Stable
 Category:       XML
@@ -118,7 +118,7 @@ extra-source-files:
 flag network-uri
   description: Get Network.URI from the network-uri package,
                with ghc <  7.10 default is False,
-               with ghc >= 7.10 default is True 
+               with ghc >= 7.10 default is True
   default: False
 
 library
@@ -237,4 +237,4 @@ library
 
 Source-Repository head
   Type:     git
-  Location: git://github.com/UweSchmidt/hxt.git
+  Location: git@github.com:fehu/hxt.git

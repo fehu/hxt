@@ -30,6 +30,7 @@ module Text.XML.HXT.Arrow.XmlState
     , withExtendedUserState
     , withOtherUserState
     , withoutUserState
+    , withChangedUserState
     ,
       -- * Run IO State arrows
       runX
